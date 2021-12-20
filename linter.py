@@ -85,11 +85,11 @@ class PhpCsFixer(Linter):
                 config_file = self.config_file
 
         command.append('fix')
-        command.append('${temp_file}')
+        command.append('${file}')
         command.append('--dry-run')
         command.append('--show-progress=none')
         command.append('--stop-on-violation')
-        command.append('--diff-format=udiff')  # requires php-cs-fixer >= 2.7
+        command.append('--diff')  # requires php-cs-fixer >= 3.0
         command.append('--using-cache=no')
         command.append('--no-ansi')
         command.append('-vv')
